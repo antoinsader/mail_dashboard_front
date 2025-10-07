@@ -1,0 +1,11 @@
+.profile_root {
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

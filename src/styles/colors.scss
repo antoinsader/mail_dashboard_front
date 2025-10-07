@@ -1,0 +1,34 @@
+// inspired color palette
+$red: #d93025;
+$blue: #1a73e8;
+$light-blue: #5e9beb;
+
+$green: #188038;
+$yellow: #f9ab00;
+$dark-gray: #202124;
+$darker-gray: #191a1d;
+$light-gray: #f1f3f4;
+$white: #ffffff;
+
+$primary: #0d47a1;
+$secondary: #ff6f00; 
+$thirdy: $blue; 
+$text-dark: #333;
+
+
+$text_dark: $darker-gray;
+$text: $dark-gray;
+$bg: $light-gray;
+
+$text_input_border: rgba(189, 191, 192, 0.815);
+
+// Exported for use in global styles
+:root {
+  --red: #{$red};
+  --blue: #{$blue};
+  --green: #{$green};
+  --yellow: #{$yellow};
+  --dark-gray: #{$dark-gray};
+  --light-gray: #{$light-gray};
+  --white: #{$white};
+}

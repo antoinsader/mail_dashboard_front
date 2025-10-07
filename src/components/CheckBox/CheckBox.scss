@@ -1,0 +1,62 @@
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+  gap: 10px;
+
+  input {
+    display: none; // hide the native checkbox
+  }
+
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      content: "";
+      width: 10px;
+      height: 16px;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: all 0.3s ease;
+      position: absolute;
+    }
+  }
+
+  input:checked + .checkmark {
+    background: #4f46e5; // modern purple
+    border-color: #4f46e5;
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  .label-text {
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  input:checked ~ .label-text {
+    color: #4f46e5;
+    font-weight: 500;
+  }
+
+  &:hover .checkmark {
+    border-color: #4f46e5;
+  }
+}

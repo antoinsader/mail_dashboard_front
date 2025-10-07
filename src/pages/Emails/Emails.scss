@@ -1,0 +1,77 @@
+@import "../../styles/mixins.scss";
+
+.emails_ids_container {
+  width: 100%;
+  p {
+    margin-bottom: 0 !important;
+  }
+  .emails_ids {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 2px solid $dark-gray;
+    background-color: $white;
+    width: 50vw;
+    overflow-x: scroll;
+  }
+}
+.actions {
+  margin-top: 3rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+
+  border: 2px solid $dark-gray;
+  background-color: white;
+  button {
+    width: 300px;
+    &.active {
+      @include bgPrimary();
+    }
+  }
+}
+
+.filters_card {
+  background-color: $white;
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  margin: 1rem auto;
+  display: flex;
+
+  flex-direction: column;
+  
+  
+
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .filters_title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 1rem;
+  }
+
+  .filter_row{
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+  }
+
+  .filters_footer {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #eaeaea;
+    padding-top: 1rem;
+  }
+}

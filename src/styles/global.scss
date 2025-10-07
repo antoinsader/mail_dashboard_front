@@ -1,0 +1,128 @@
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg;
+  color: $text;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  color: $text_dark;
+}
+
+p {
+  margin: 0;
+  font-weight: 400;
+  color: $text;
+}
+
+button {
+  @include btnBase();
+}
+button.primary {
+  @include btnPrimary();
+}
+
+button.secondary {
+  @include btnSecondary();
+}
+
+button.thirdy {
+  @include btnThirdy();
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid $light-gray;
+  border-top: 3px solid $blue;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto; // centers horizontally
+}
+
+.checkbox_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: #333;
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0066ff;
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.error_note {
+  color: $red;
+  padding: 8px;
+  border: 1px solid $red;
+  width: 100%;
+  border-left: 5px solid $red;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+}
+
+.success_note {
+  color: $text;
+  padding: 8px;
+  border: 1px solid $green;
+  width: 100%;
+  border-left: 5px solid $green;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+}

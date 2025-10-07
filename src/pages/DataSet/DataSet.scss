@@ -1,0 +1,74 @@
+@import "../../styles/mixins.scss";
+
+.document_id_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  svg {
+    font-size: 4rem;
+    color: $secondary;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5; // visually indicate it’s disabled
+    }
+
+    &:hover:not(.disabled) {
+      color: lighten($secondary, 10%);
+    }
+  }
+}
+.btn_tfidf {
+  width: 100px !important;
+}
+.tfidf_doc {
+  position: relative;
+}
+.badge {
+  width: 100px;
+  border-radius: 2rem;
+  padding: 8px;
+  background-color: lighten($blue, 30%);
+  font-weight: 500 !important;
+  margin-bottom: 3rem;
+}
+
+.tokens {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  max-height: 200px;
+  overflow-y: scroll;
+  .tok_span {
+    border-radius: 4px;
+    flex: 0 0 50px;
+  }
+}
+.topics_root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.topic_emails {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.custom_ul{
+  @include custom_ul;
+  overflow-x: auto; // horizontal scroll looks better for many items
+
+  &.without_scroll{
+    flex-wrap: wrap !important;
+    
+  }
+}

@@ -1,0 +1,49 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.dashboard_root {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background-color: $bg;
+  color: $text;
+  transition: grid-template-columns 0.3s ease; 
+
+  &.collapsed {
+    grid-template-columns: 50px 1fr; // shrink sidebar properly
+  }
+
+  .content_root {
+    padding: 5rem;
+    overflow-y: auto;
+    background-color: $bg;
+    color: $text;
+    width: 90%;
+    transition: margin 0.3s ease;
+    &.sidebar_collapsed{
+      width: 90%;
+    }
+
+    // modern scrollbar
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $light-gray;
+      border-radius: 6px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: $text_dark;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $dark-gray;
+    }
+  }
+}

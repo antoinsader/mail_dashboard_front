@@ -1,0 +1,9 @@
+@import "../../styles/colors.scss";
+
+.error_root {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid $red;
+  border-left: 8px solid $red;
+  margin: 16px 0px;
+}

@@ -1,0 +1,44 @@
+
+@import "../../styles/colors.scss";
+
+
+.login_page_root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, $red 0%, $blue 50%, $green 100%);
+
+  .login_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    background: $white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInUp 0.6s ease;
+
+    .login_logo {
+      width: 48px;
+      margin-bottom: 1rem;
+    }
+
+  }
+  .login_btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    .login_btn{
+      width: 200px !important;
+    }
+  }
+
+}
