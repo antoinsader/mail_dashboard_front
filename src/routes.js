@@ -7,6 +7,7 @@ import Profile from "./pages/Profile/Profile";
 import Home from "./pages/Home/Home";
 import Emails from "./pages/Emails/Emails";
 import DataSet from "./pages/DataSet/DataSet";
+import Summaries from './pages/Summaries/Summaries'
 
 export default function AppRoutes() {
   const routes = [
@@ -29,6 +30,13 @@ export default function AppRoutes() {
       id: 3,
       href: "/dataset",
       element: <DataSet />,
+      dashboard: true,
+      protected_app: true,
+    },
+    {
+      id: 4,
+      href: "/summaries",
+      element: <Summaries />,
       dashboard: true,
       protected_app: true,
     },

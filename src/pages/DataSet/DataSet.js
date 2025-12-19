@@ -106,7 +106,7 @@ export default function DataSet() {
 
     try {
       const res = await postRequest({
-        route: "ds/get_doc_tfidf",
+        route: "ds_email/get_doc_tfidf",
         body,
       });
       if (res && res.doc_id) {
@@ -153,7 +153,7 @@ export default function DataSet() {
     return (
       <div className="no_active">
         <h3>
-          Please choose dataset from the grid in <Link to={"home"}> Home</Link>
+          Please choose dataset from the grid in <Link to={"/home"}> Home</Link>
         </h3>
       </div>
     );

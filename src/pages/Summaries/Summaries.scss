@@ -1,0 +1,21 @@
+.email_index_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  svg {
+    font-size: 4rem;
+    color: $secondary;
+    cursor: pointer;
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5; // visually indicate it’s disabled
+    }
+
+    &:hover:not(.disabled) {
+      color: lighten($secondary, 10%);
+    }
+  }
+}

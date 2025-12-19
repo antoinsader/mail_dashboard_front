@@ -11,7 +11,7 @@ export default function Dashboard({ children }) {
   const sideBarItems = [
     { id: 1, label: "Home", href: "/home", icon: <FiHome /> },
     { id: 3, label: "Emails", href: "/emails", icon: <FiMail /> },
-    { id: 4, label: "Dataset", href: "/dataset", icon: <FiDatabase /> },
+    { id: 4, label: "Dataset NLP", href: "/dataset", icon: <FiDatabase /> },
   ];
   const [collapsed, set_collapsed] = useCachedState(LOCAL_STORAGE_KEYS.sidebar_open, false);
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../context/AuthContext";
 import Button from "../../components/Button/Button";
@@ -11,22 +11,28 @@ import { useCachedState } from "../../context/CacheContext";
 import { LOCAL_STORAGE_KEYS } from "../../config";
 
 export default function Login() {
-  const { user_app, user_google, login_with_code, login_with_google, loading } =
+  const { user_app, user_google, login_with_code, login_with_google, loading, get_user } =
     useAuth();
+
+  const navigate= useNavigate();
 
   const [user_code, set_user_code] = useCachedState(
     LOCAL_STORAGE_KEYS.last_code,
     ""
   );
   const [show_user_code_input, set_show_user_code_input] = useState(false);
-
   const [login_error, set_login_error] = useState();
+
 
   const login_normal = async () => {
     if (loading) return;
     set_login_error();
     try {
-      await login_with_code(user_code);
+      const lg = await login_with_code(user_code);
+      if(lg && lg.message){
+        get_user();
+        navigate("/home")
+      }
     } catch (ex) {
       toast.error(ex.msg || ex);
       set_login_error(ex.msg || ex);

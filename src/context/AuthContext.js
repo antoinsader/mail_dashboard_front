@@ -83,6 +83,7 @@ export function AuthProvider({ children }) {
       value={{
         user_app,
         user_google,
+        get_user,
 
         login_with_code,
         login_with_google,
